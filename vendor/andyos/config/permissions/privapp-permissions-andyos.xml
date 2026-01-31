@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- AndyOS Privileged App Permissions -->
 <permissions>
-    <!-- F-Droid Privileged Extension -->
-    <privapp-permissions package="org.fdroid.fdroid.privileged">
-        <permission name="android.permission.INSTALL_PACKAGES"/>
-        <permission name="android.permission.DELETE_PACKAGES"/>
-        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
-    </privapp-permissions>
-
-    <!-- AndyOS Privacy Guard -->
     <privapp-permissions package="org.andyos.privacyguard">
         <permission name="android.permission.INTERNET"/>
         <permission name="android.permission.ACCESS_NETWORK_STATE"/>
         <permission name="android.permission.CHANGE_NETWORK_STATE"/>
+        <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
         <permission name="android.permission.READ_LOGS"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
-        <permission name="android.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS"/>
     </privapp-permissions>
 
-    <!-- AndyOS Setup Wizard -->
-    <privapp-permissions package="org.andyos.setupwizard">
+    <privapp-permissions package="org.andyos.settings">
+        <permission name="android.permission.WRITE_SETTINGS"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
         <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.VIBRATE"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="org.andyos.setupwizard">
+        <permission name="android.permission.WRITE_SETTINGS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.ACCESS_WIFI_STATE"/>
+        <permission name="android.permission.CHANGE_WIFI_STATE"/>
         <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
     </privapp-permissions>
 
-    <!-- AndyOS Updater -->
     <privapp-permissions package="org.andyos.updater">
+        <permission name="android.permission.INTERNET"/>
         <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
         <permission name="android.permission.REBOOT"/>
         <permission name="android.permission.RECOVERY"/>
