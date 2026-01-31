@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.andyos.updater">
+    package="org.andyos.updater"
+    android:sharedUserId="android.uid.system">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.RECOVERY" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_updater"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:theme="@style/Theme.AndyOS">
         
         <activity
-            android:name=".MainActivity"
+            android:name=".UpdaterActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -26,11 +24,6 @@
             </intent-filter>
         </activity>
         
-        <service
-            android:name=".UpdateService"
-            android:enabled="true"
-            android:exported="false" />
-            
     </application>
 
 </manifest>
