@@ -19,8 +19,9 @@ AndyOS is a privacy-focused Android operating system built on AOSP (Android Open
 - **Version**: 1.0 "Liberation"
 - **Base**: Android 14 (API 34)
 - **Kernel**: Linux 6.1+
+- **VM Support**: VirtualBox, VMware Workstation/Fusion
 
-## Release Checklist
+## Features
 
 ### Privacy
 - [ ] Zero network connections to google.com domains (tcpdump verified)
@@ -70,8 +71,8 @@ AndyOS is a privacy-focused Android operating system built on AOSP (Android Open
 
 | Google App | AndyOS Replacement | F-Droid Package | Features | Privacy Notes |
 |------------|--------------------|-----------------|----------|---------------|
-| Chrome | Vanadium | `app.vanadium.browser` | Ad/tracker blocking | No Google sync |
-| Gmail | K-9 Mail | `com.fsck.k9` | PGP support | No tracking |
+| Chrome | Bromite / Vanadium | `org.bromite.bromite` | Ad/tracker blocking, hardened | No Google sync, privacy-first |
+| Gmail | K-9 Mail / Proton Mail | `com.fsck.k9` | PGP support, E2E encryption | No tracking, zero-access encryption |
 | Maps | OsmAnd | `net.osmand.plus` | Offline maps | No location tracking |
 | Play Store | F-Droid | `org.fdroid.fdroid` | Open source apps | No account required |
 | YouTube | NewPipe | `org.schabi.newpipe` | No ads, background play | No Google account |
@@ -83,11 +84,22 @@ AndyOS is a privacy-focused Android operating system built on AOSP (Android Open
 | Phone | Simple Dialer | `com.simplemobiletools.dialer` | Clean UI | No tracking |
 | Camera | Open Camera | `net.sourceforge.opencamera` | Manual controls | No location tags default |
 | Keyboard | OpenBoard | `org.dslul.openboard.inputmethod.latin` | Gesture typing | No internet permission |
-| Assistant | None | N/A | Removed | Complete removal |
-| Pay/Wallet | None | N/A | Removed | Secure local storage only |
+| Assistant | Lumo by Proton | `proton.lumo.assistant` | Privacy-focused AI | On-device processing |
+| Pay/Wallet | Proton Wallet | `proton.wallet` | Cryptocurrency wallet | Self-custodial, E2E encrypted |
+| Password Manager | Proton Pass | `proton.pass` | Password manager | Zero-knowledge architecture |
 
 
 
 ---
-For installation instructions, see [INSTALL.md](docs/INSTALL.md).
-For developer documentation, see [API.md](docs/API.md).
+
+## Documentation
+- [Installation Guide](docs/INSTALL.md) - Flash to device
+- [Build Instructions](docs/BUILDING.md) - Compile from source
+- [VM Setup](docs/VM_SETUP.md) - VirtualBox & VMware
+- [Privacy Setup](docs/PRIVACY_SETUP.md) - Post-installation hardening
+- [Contributing](CONTRIBUTING.md) - Submit patches
+- [License](LICENSE) - Apache 2.0
+
+---
+
+**Built with ❤️ by [Ovi Shekh](https://www.ovishekh.com/)**
