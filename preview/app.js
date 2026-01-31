@@ -1,3 +1,4 @@
+// Clock update
 function updateClock() {
     const now = new Date();
     const clock = document.getElementById('clock');
@@ -8,6 +9,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// Navigation functions
 function nextStep() {
     document.getElementById('setup-wizard').style.display = 'none';
     document.getElementById('privacy-guard').style.display = 'block';
@@ -28,14 +30,18 @@ function restartDemo() {
     document.getElementById('setup-wizard').style.display = 'block';
 }
 
-// Add a subtle parallax effect to the glow orbs
-document.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    const orbs = document.querySelectorAll('.glow-orb');
-    orbs.forEach((orb, index) => {
-        const speed = (index + 1) * 20;
-        orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+// Add subtle interaction feedback
+document.addEventListener('DOMContentLoaded', () => {
+    const switches = document.querySelectorAll('.switch input');
+    switches.forEach(sw => {
+        sw.addEventListener('change', (e) => {
+            const card = e.target.closest('.feature-card');
+            if (card) {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 100);
+            }
+        });
     });
 });
