@@ -1,0 +1,10 @@
+# Ignore all key files
+*.key
+*.crt
+*.pem
+*.pk8
+*.x509.pem
+*.pkmd.bin
+
+# Keep README
+!README.md
