@@ -1,0 +1,49 @@
+#!/bin/bash
+# Tracker Scan Tool for AndyOS
+# Analyzes installed apps for known trackers
+
+PACKAGE=$1
+
+if [ -z "$PACKAGE" ]; then
+    echo "Usage: tracker-scan <package-name>"
+    echo "Example: tracker-scan com.example.app"
+    exit 1
+fi
+
+echo "AndyOS Tracker Scan v1.0"
+echo "========================"
+echo "Scanning: $PACKAGE"
+echo ""
+
+# Check if package exists
+if ! pm list packages | grep -q "$PACKAGE"; then
+    echo "Error: Package not found"
+    exit 1
+fi
+
+# Get package info
+echo "[*] Package Information:"
+dumpsys package "$PACKAGE" | grep -E "versionName|versionCode" | head -2
+echo ""
+
+# Check permissions
+echo "[*] Dangerous Permissions:"
+dumpsys package "$PACKAGE" | grep "android.permission" | grep -E "INTERNET|LOCATION|CAMERA|MICROPHONE|READ_CONTACTS|READ_SMS"
+echo ""
+
+# Known tracker libraries
+echo "[*] Checking for known tracker libraries..."
+TRACKERS_FOUND=0
+
+# This would require analyzing the APK
+echo "  (Full analysis requires APK inspection)"
+echo ""
+
+# Network connections
+echo "[*] Active Network Connections:"
+netstat -tunap 2>/dev/null | grep "$PACKAGE" | awk '{print $5}' | sort | uniq
+echo ""
+
+echo "========================"
+echo "Scan Complete"
+echo "========================"

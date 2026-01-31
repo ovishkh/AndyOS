@@ -1,0 +1,26 @@
+# AndyOS System Properties
+
+# Version information
+ro.andyos.version=1.0
+ro.andyos.codename=Liberation
+ro.andyos.build.date=20260131
+
+# Privacy configuration
+ro.config.nocheckin=1
+ro.com.google.gmsversion=0
+
+# DNS defaults
+net.dns1=9.9.9.9
+net.dns2=149.112.112.112
+
+# Captive portal
+captive_portal_https_url=https://captiveportal.andyos.org/generate_204
+captive_portal_http_url=http://captiveportal.andyos.org/generate_204
+
+# Disable Google services
+ro.setupwizard.mode=OPTIONAL
+ro.com.google.clientidbase=
+
+# Security
+ro.adb.secure=1
+persist.sys.usb.config=none

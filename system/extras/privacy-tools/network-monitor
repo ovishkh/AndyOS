@@ -1,0 +1,23 @@
+#!/bin/bash
+# Network Monitor Tool for AndyOS
+# Real-time network connection monitoring
+
+echo "AndyOS Network Monitor v1.0"
+echo "==========================="
+echo "Press Ctrl+C to stop"
+echo ""
+
+# Monitor network connections
+while true; do
+    clear
+    echo "Active Network Connections:"
+    echo "==========================="
+    netstat -tunap 2>/dev/null | grep ESTABLISHED | awk '{print $5, $7}' | sort | uniq
+    echo ""
+    echo "DNS Queries:"
+    echo "==========================="
+    # This would require tcpdump or similar
+    echo "(Requires root access for full monitoring)"
+    echo ""
+    sleep 2
+done

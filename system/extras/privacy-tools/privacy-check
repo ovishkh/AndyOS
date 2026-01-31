@@ -1,0 +1,60 @@
+#!/bin/bash
+# Privacy Check Tool for AndyOS
+# Scans system for Google services and tracking components
+
+echo "AndyOS Privacy Check v1.0"
+echo "=========================="
+echo ""
+
+# Check for Google services
+echo "[*] Checking for Google services..."
+GOOGLE_APPS=$(pm list packages | grep -i google | wc -l)
+if [ "$GOOGLE_APPS" -eq 0 ]; then
+    echo "✓ No Google apps found"
+else
+    echo "✗ Found $GOOGLE_APPS Google packages:"
+    pm list packages | grep -i google
+fi
+echo ""
+
+# Check DNS configuration
+echo "[*] Checking DNS configuration..."
+DNS1=$(getprop net.dns1)
+DNS2=$(getprop net.dns2)
+echo "  DNS1: $DNS1"
+echo "  DNS2: $DNS2"
+if [ "$DNS1" = "9.9.9.9" ]; then
+    echo "✓ Using privacy-focused DNS (Quad9)"
+else
+    echo "✗ Not using recommended DNS"
+fi
+echo ""
+
+# Check for tracking services
+echo "[*] Checking for tracking services..."
+TRACKERS=0
+for service in "com.google.android.gms" "com.android.vending" "com.google.android.gsf"; do
+    if pm list packages | grep -q "$service"; then
+        echo "✗ Found: $service"
+        TRACKERS=$((TRACKERS + 1))
+    fi
+done
+if [ "$TRACKERS" -eq 0 ]; then
+    echo "✓ No known tracking services found"
+fi
+echo ""
+
+# Check captive portal
+echo "[*] Checking captive portal configuration..."
+PORTAL=$(getprop captive_portal_https_url)
+if echo "$PORTAL" | grep -q "andyos.org"; then
+    echo "✓ Using AndyOS captive portal"
+else
+    echo "✗ Captive portal: $PORTAL"
+fi
+echo ""
+
+# Summary
+echo "=========================="
+echo "Privacy Check Complete"
+echo "=========================="

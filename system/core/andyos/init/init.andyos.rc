@@ -1,0 +1,30 @@
+# AndyOS init script
+
+on early-boot
+    # Set AndyOS properties
+    setprop ro.andyos.version 1.0
+    setprop ro.andyos.codename Liberation
+
+on boot
+    # Start Privacy Guard service
+    start andyos-privacyguard
+
+    # Configure DNS
+    setprop net.dns1 9.9.9.9
+    setprop net.dns2 149.112.112.112
+
+    # Disable Google connectivity check
+    setprop ro.config.nocheckin 1
+
+service andyos-privacyguard /system/bin/privacyguard
+    class main
+    user system
+    group system inet net_admin
+    capabilities NET_ADMIN NET_RAW
+    oneshot
+
+service andyos-tracker-blocker /system/bin/tracker-blocker
+    class late_start
+    user system
+    group system inet
+    oneshot
