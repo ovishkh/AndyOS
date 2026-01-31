@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /system/etc/andyos-connectivity.xml -->
+<connectivity>
+    <captive_portal_https_url>https://captiveportal.andyos.org/generate_204</captive_portal_https_url>
+    <captive_portal_http_url>http://captiveportal.andyos.org/generate_204</captive_portal_http_url>
+</connectivity>

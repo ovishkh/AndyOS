@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- /system/etc/permissions/andyos-defaults.xml -->
+<permissions>
+    <permission android:name="android.permission.CAMERA" default="deny" />
+    <permission android:name="android.permission.RECORD_AUDIO" default="deny" />
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION" default="deny" />
+    <permission android:name="android.permission.READ_CONTACTS" default="deny" />
+    <permission android:name="android.permission.READ_SMS" default="deny" />
+</permissions>

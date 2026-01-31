@@ -1,0 +1,8 @@
+ro.build.product=AndyOS
+ro.build.brand=AndyOS
+ro.build.manufacturer=AndyOS Project
+ro.build.description=AndyOS 1.0 Liberation
+ro.product.model=AndyOS Device
+ro.andyos.version=1.0
+ro.andyos.codename=Liberation
+ro.andyos.build_date=2026-01-31

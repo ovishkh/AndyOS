@@ -1,74 +1,25 @@
-# 🐧 Dristi OS
+# AndyOS - De-Googled Android Operating System
 
-> A mock OS I built to impress my Dristi ma'am 😉  
-> Visually fat. Functionally short. Inspired by Android & Linux.
+"Privacy First. Google Never."
 
----
+AndyOS is a privacy-focused Android operating system built on AOSP (Android Open Source Project) with complete removal of Google services, tracking mechanisms, and proprietary components. 
 
-## 📱 What is Dristi OS?
+## Core Philosophy
+- **Complete Privacy**: No data collection, tracking, or telemetry.
+- **Zero Google**: Entirely independent of Google services and framework.
+- **User Control**: Full authority over data and device permissions.
 
-**Dristi OS** is a **resource-demanding, barely-working mock operating system**.  
-It’s a chaotic love letter to Linux and Android — but with none of their powers.
+## Key Features
+- **Privacy Guard**: Per-app network firewall and tracker blocking.
+- **Hardened Security**: Linux kernel 6.1+ with hardening patches.
+- **Verified Boot**: AVB 2.0 with custom signing keys.
+- **Secure Ecosystem**: F-Droid as the primary app store.
 
-You can only do one thing:  
-🎮 **Play the Android game _Vag Hasina Vag_** (yes, that's it).
-
-Everything else?  
-Nope. You can't do anything properly. On purpose. Because... **aesthetic**.
-
----
-
-## 🖥️ Features (kinda)
-
-- ✅ Looks like Android and Linux had a weird baby
-- ✅ Boots (sometimes)
-- ✅ Has an **empty shell** (don’t ask why, there's no point)
-- ❌ Productivity? Nope
-- ❌ File system? Lol
-- ❌ Multitasking? Never heard of her
+## Build Information
+- **Version**: 1.0 "Liberation"
+- **Base**: Android 14 (API 34)
+- **Kernel**: Linux 6.1+
 
 ---
-
-## 🔧 How to Run It (If You Dare)
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/ovishkh/dristi-os.git
-   cd dristi-os
-
-2. Build the OS and create an ISO:
-
-   ```bash
-   # Use your favorite build tool (you’ll know if you know)
-   ./build.sh
-   ```
-
-3. Run it on VMware or VirtualBox (physical hardware not recommended unless you hate your PC).
-
----
-
-## ⚠️ Warnings
-
-* **Resource hungry**: This OS *demands* your CPU’s soul
-* **Not usable**: Seriously, it’s mostly for vibes
-* **Empty shell**: There’s literally no shell commands. It’s just there.
-* **Not production-ready**: Unless your production is a meme
-
----
-
-## ❤️ Why?
-
-To impress **Dristi ma’am**. That’s it.
-(Hi Dristi ma’am 👋)
-
-
-
-## 📜 License
-
-MIT (Because why not?)
-
----
-
-> Built with frustration, fun, and fandom by [Ovi Shekh](https://github.com/ovishkh) 🚀
-
-
+For installation instructions, see [INSTALL.md](docs/INSTALL.md).
+For developer documentation, see [API.md](docs/API.md).
