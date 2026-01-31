@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AndyOS | Virtual Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="os-container">
+        <!-- Background Decor -->
+        <div class="glow-orb" style="top: -100px; left: -100px; background: var(--accent-color);"></div>
+        <div class="glow-orb" style="bottom: -100px; right: -100px; background: var(--accent-secondary);"></div>
+
+        <div id="status-bar">
+            <div id="clock">12:00</div>
+            <div class="status-icons">
+                <span>AndyOS 1.0</span>
+                <span>📶</span>
+                <span>🔋 100%</span>
+            </div>
+        </div>
+
+        <div id="screen">
+            <!-- Setup Wizard Step 1 -->
+            <div id="setup-wizard" class="wizard-card" data-step="1">
+                <h1>Welcome to AndyOS</h1>
+                <p>Experience true digital sovereignty. No Google. No tracking. Just you and your data.</p>
+                <div class="wizard-actions">
+                    <button class="btn" onclick="nextStep()">Start Setup</button>
+                </div>
+            </div>
+
+            <!-- Setup Wizard Step 2 (Hidden) -->
+            <div id="privacy-guard" class="privacy-dashboard wizard-card">
+                <h1>Privacy Guard</h1>
+                <p>Manage your device's security heartbeat.</p>
+                <div class="grid">
+                    <div class="feature-card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Network Firewall</h3>
+                        <p>Block unknown outbound connections.</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon">🚫</div>
+                        <h3>Tracker Blocking</h3>
+                        <p>Remove telemetry from all installed apps.</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon">🔐</div>
+                        <h3>Storage Isolation</h3>
+                        <p>Apps only see their own files by default.</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="wizard-actions" style="margin-top: 30px;">
+                    <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+                    <button class="btn" onclick="showHome()">Finish Setup</button>
+                </div>
+            </div>
+
+            <!-- Mock Home (Hidden) -->
+            <div id="home-screen" class="wizard-card" style="display: none;">
+                <h1>AndyOS Ready</h1>
+                <p>Your system is hardened and verified.</p>
+                <div class="grid">
+                    <div class="feature-card" style="text-align: center;">F-Droid</div>
+                    <div class="feature-card" style="text-align: center;">Settings</div>
+                    <div class="feature-card" style="text-align: center;">Matrix</div>
+                    <div class="feature-card" style="text-align: center;">Browser</div>
+                </div>
+                <button class="btn" style="margin-top: 20px;" onclick="restartDemo()">Restart Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

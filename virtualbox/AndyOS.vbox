@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<VirtualBox xmlns="http://www.virtualbox.org/" version="1.19-macosx">
+  <Machine uuid="{feba8bf3-andy-0s1a-92bb-ffba8bf320ff}" name="AndyOS" OSType="Android_64" snapshotFolder="Snapshots" lastStateChange="2026-01-31T17:00:00Z">
+    <MediaRegistry>
+      <HardDisks/>
+      <DVDImages/>
+      <FloppyImages/>
+    </MediaRegistry>
+    <Hardware>
+      <CPU count="2">
+        <PAE enabled="true"/>
+        <LongMode enabled="true"/>
+        <HardwareVirtExLargePages enabled="true"/>
+      </CPU>
+      <Memory RAMSize="4096"/>
+      <Display VRAMSize="128" accelerate3D="true" controller="VMSVGA"/>
+      <BIOS>
+        <IOAPIC enabled="true"/>
+        <SmbiosUuidVeryLowBits value="0"/>
+      </BIOS>
+      <USB>
+        <Controllers>
+          <Controller name="OHCI" type="OHCI"/>
+          <Controller name="EHCI" type="EHCI"/>
+        </Controllers>
+      </USB>
+      <Network>
+        <Adapter slot="0" enabled="true" type="82540EM">
+          <NAT/>
+        </Adapter>
+      </Network>
+      <AudioAdapter controller="HDA" driver="CoreAudio" enabled="true" enabledIn="false"/>
+      <Clipboard mode="Bidirectional"/>
+      <GuestProperties>
+        <GuestProperty name="/VirtualBox/GuestAdd/Version" value="7.0.0" timestamp="1700000000000" flags=""/>
+      </GuestProperties>
+    </Hardware>
+    <StorageControllers>
+      <StorageController name="SATA" type="AHCI" PortCount="2" useHostIOCache="false" Bootable="true" IDE0MasterEmulationPort="0" IDE0SlaveEmulationPort="1" IDE1MasterEmulationPort="2" IDE1SlaveEmulationPort="3">
+        <AttachedDevice type="HardDisk" hotpluggable="false" port="0" device="0"/>
+        <AttachedDevice passthrough="false" type="DVD" hotpluggable="false" port="1" device="0"/>
+      </StorageController>
+    </StorageControllers>
+  </Machine>
+</VirtualBox>
